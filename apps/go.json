@@ -1,0 +1,20 @@
+{
+  "description": "An open source programming language that makes it easy to build simple, reliable, and efficient software.",
+  "homepage": "https://go.dev",
+  "actions": {
+    "executable": [
+      "bin/go",
+      "bin/gofmt"
+    ]
+  },
+  "versioning": {
+    "type": "html",
+    "url": "https://golang.org/dl/",
+    "match": "go(?p<version>[\\d.]+)\\.(windows|darwin|linux)-",
+    "pattern": {
+      "windows": "https://dl.google.com/go/go{{ .Version }}.windows-{{ .Arch }}.zip",
+      "linux": "https://dl.google.com/go/go{{ .Version }}.linux-{{ .Arch }}.tar.gz",
+      "macos": "https://dl.google.com/go/go{{ .Version }}.darwin-{{ .Arch }}.tar.gz"
+    }
+  }
+}

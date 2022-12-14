@@ -1,0 +1,30 @@
+{
+  "description": "Node.js® is an open-source, cross-platform JavaScript runtime environment.",
+  "actions": {
+    "executable": [
+      "node", "npm", "npx"
+    ],
+    "persist": [
+      "node_modules"
+    ]
+  },
+  "versioning": {
+    "type": "html",
+    "url": "https://nodejs.org/en/download/current/",
+    "match": "Current Version: <strong>(?p<version>[\\d+.]+)</strong>",
+    "pattern": {
+      "windows":{
+        "x86": "https://nodejs.org/dist/v{{ .Version }}/node-v{{ .Version }}-win-x86.zip",
+        "x64": "https://nodejs.org/dist/v{{ .Version }}/node-v{{ .Version }}-win-x64.zip"
+      },
+      "linux":{
+        "x64": "https://nodejs.org/dist/v{{ .Version }}/node-v{{ .Version }}-linux-x64.tar.xz",
+        "arm": "https://nodejs.org/dist/v{{ .Version }}/node-v{{ .Version }}-linux-arm64.tar.xz"
+      },
+      "macos":{
+        "x64": "https://nodejs.org/dist/v{{ .Version }}/node-v{{ .Version }}-darwin-x64.tar.xz",
+        "arm": "https://nodejs.org/dist/v{{ .Version }}/node-v{{ .Version }}-darwin-arm64.tar.xz"
+      }
+    }
+  }
+}
